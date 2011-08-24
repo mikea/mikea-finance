@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      9211,        225]
-NotebookOptionsPosition[      8683,        201]
-NotebookOutlinePosition[      9021,        216]
-CellTagsIndexPosition[      8978,        213]
+NotebookDataLength[     26572,        624]
+NotebookOptionsPosition[     25862,        594]
+NotebookOutlinePosition[     26220,        610]
+CellTagsIndexPosition[     26177,        607]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,8 +25,13 @@ Cell["Options evaluations Demo", "Title",
   3.5232005292831078`*^9, 3.523200530098333*^9}}],
 
 Cell[BoxData[
- RowBox[{"<<", "options`"}]], "Input",
- CellChangeTimes->{{3.523200347287898*^9, 3.523200361668826*^9}}],
+ RowBox[{"Needs", "[", 
+  RowBox[{"\"\<FinancialOptions`\>\"", ",", " ", "\"\<options.m\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.523200347287898*^9, 3.523200361668826*^9}, {
+   3.523200857224285*^9, 3.523200897080967*^9}, {3.5232021233772306`*^9, 
+   3.523202149550186*^9}, {3.523202341041142*^9, 3.5232023669126673`*^9}, {
+   3.523203853916102*^9, 3.52320393341823*^9}, 3.523203987587665*^9}],
 
 Cell[CellGroupData[{
 
@@ -120,87 +125,476 @@ lCHzJ4Ivvuxf0OzfCH7SavOlZ/8i+Os2FHz//x/BBwC7Wu/C
     Scaled[0.02]}]], "Output",
  CellChangeTimes->{{3.5231383877173634`*^9, 3.5231383936289797`*^9}, 
    3.52313843771714*^9, 3.5231384852421837`*^9, 3.523200367557898*^9, {
-   3.523200539610878*^9, 3.52320054407719*^9}}]
+   3.523200539610878*^9, 3.52320054407719*^9}, {3.523200873328154*^9, 
+   3.5232008911195717`*^9}, 3.5232016583925753`*^9, {3.523202073845436*^9, 
+   3.523202094056572*^9}, {3.523202129167904*^9, 3.5232021518938017`*^9}, 
+   3.5232021865363407`*^9, 3.523202229089294*^9, 3.523202369968438*^9, 
+   3.523202440505515*^9, {3.5232024722104187`*^9, 3.523202485576754*^9}, 
+   3.523202725530671*^9, 3.523202843039562*^9, 3.5232029305288763`*^9, 
+   3.52320328195592*^9, {3.5232035966595297`*^9, 3.5232036100786543`*^9}, 
+   3.5232036424854813`*^9, {3.523203730995356*^9, 3.523203796360531*^9}, {
+   3.5232038560578136`*^9, 3.523203901498282*^9}, {3.52320393591144*^9, 
+   3.523204000949874*^9}, 3.523206629864203*^9, {3.523206858154604*^9, 
+   3.523206878275237*^9}, 3.523208232612586*^9, {3.523208341588176*^9, 
+   3.5232083674842176`*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Plot", "[", 
+ RowBox[{"Manipulate", "[", 
   RowBox[{
-   RowBox[{"PortfolioPayoff", "[", 
+   RowBox[{"Plot", "[", "\[IndentingNewLine]", 
     RowBox[{
-     RowBox[{"{", 
+     RowBox[{"PortfolioPayoff", "[", 
       RowBox[{
-       RowBox[{"MkOption", "[", 
-        RowBox[{"long", ",", " ", "call", ",", " ", "80"}], "]"}], ",", 
-       RowBox[{"MkOption", "[", 
-        RowBox[{"short", ",", " ", "call", ",", " ", "100"}], "]"}]}], "}"}], 
-     ",", " ", "S"}], "]"}], ",", " ", 
-   RowBox[{"{", 
-    RowBox[{"S", ",", " ", "0", ",", " ", "200"}], "}"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.523138319986731*^9, 3.523138377499704*^9}}],
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"MkOption", "[", 
+          RowBox[{"p1", ",", " ", "t1", ",", " ", "e1"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"MkOption", "[", 
+          RowBox[{"p2", ",", " ", "t2", ",", " ", "e2"}], "]"}]}], "}"}], ",",
+        " ", "\[IndentingNewLine]", "S"}], "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"S", ",", " ", "0", ",", " ", "200"}], "}"}], ",", " ", 
+     RowBox[{"AxesOrigin", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}]}], "]"}], ",", " ", 
+   "\[IndentingNewLine]", "\"\<Option1\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"p1", ",", " ", "\"\<long\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<long\>\"", ",", " ", "\"\<short\>\""}], "}"}]}], "}"}],
+        "]"}], ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"t1", ",", " ", "\"\<call\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<call\>\"", ",", " ", "\"\<put\>\""}], "}"}]}], "}"}], 
+       "]"}], ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"e1", ",", " ", "80", ",", " ", "\"\<\>\""}], "}"}], ",", 
+         " ", "0", ",", " ", "200"}], "}"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Spacer", "[", "10", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", "e1", "]"}]}], "\[IndentingNewLine]", "}"}], 
+    "]"}], ",", "\[IndentingNewLine]", "\"\<Option 2\>\"", ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"p2", ",", " ", "\"\<short\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<long\>\"", ",", " ", "\"\<short\>\""}], "}"}]}], "}"}],
+        "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"t2", ",", " ", "\"\<call\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<call\>\"", ",", " ", "\"\<put\>\""}], "}"}]}], "}"}], 
+       "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"e2", ",", " ", "100", ",", " ", "\"\<\>\""}], "}"}], ",", 
+         " ", "0", ",", " ", "200"}], "}"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Spacer", "[", "10", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", "e2", "]"}]}], "\[IndentingNewLine]", "}"}], 
+    "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.523138319986731*^9, 3.523138377499704*^9}, {
+  3.523200622588072*^9, 3.523200668141428*^9}, {3.523200878761621*^9, 
+  3.5232008879998083`*^9}, {3.523200925969061*^9, 3.5232009394905453`*^9}, {
+  3.52320098413211*^9, 3.523200986658534*^9}, {3.523201646791313*^9, 
+  3.52320165551217*^9}, {3.52320737042334*^9, 3.52320751217638*^9}, {
+  3.523207543338215*^9, 3.523207639249378*^9}, {3.52320769008099*^9, 
+  3.5232076945408783`*^9}, {3.523207754389851*^9, 3.523207791193186*^9}, {
+  3.523207919669286*^9, 3.523208023972479*^9}, {3.523208095062111*^9, 
+  3.523208160008617*^9}, {3.523208192632798*^9, 3.5232082246843367`*^9}}],
 
 Cell[BoxData[
- GraphicsBox[{{{}, {}, 
-    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
-1:eJxTTMoPSmViYGCwAGIQrdT/d/E8uYt2DFCwnUNTPjdjvT2Mf7Bi3RKNjP1w
-/jGDwnS2jPNw/omeSx5f0+/D+Setmne+SX8P55+aeLvwRfp/ON9rL7vfs3R+
-Bxj/LK8ZJ0usApzv1O96YLm/Bpyfqv+L15DXAM731Uz9KOZuAudvulJbetLC
-As63FtJaz1JvA+en/540d2mEA5yff+y58XpfJzi/K4pN9W+OC5yffLw6zTDD
-Dc4/yC4ZmB3pAecbCjZMe1niBecnfLbV8cvxgfMXzjsq873XD87f3Gd1+1JQ
-AJxfsss2YK5PIJy//9TST53RQQj/SFworI1H8Jek/fpQkIzgdzH5vw/PRvBD
-rH68Vq1G8F+t9Hp6cBaCL9L5/vrPmwg+23XJ8Ld3EfyfKi7XHjxE8O8dmHHl
-+EsEf+UPx4tTfyL4dhlTThlKBsP5me6WezMjEPx3GpJHN8Yg+EVcP8/8TEDw
-a87uuNOZieBPCLb4s7IKwd8Wb279ag6Cb+0o7my0EME/oPTdq2opgn/y6bYo
-rnUI/p1ssyqt/Qh+oq9YU9FhBP+Z3rfOXccR/Pcft870uoDgM1WY7sx6iOC3
-R4oe3PQUweex/nri10sEX/TflhtdnxD8WfenPLj0DcGXO1jyQuo3gn8xQl7q
-NRIfAFwc1As=
-      "]], LineBox[CompressedData["
-1:eJxljX0s1HEcx3/kqesm6kZltjsP07rr/Px+KxT93la4aKkc9+OflDJc8lCx
-sgqFkx4uNika1ZqrTss8rBKJyjUP1fTIGpm7jFh5Wh56+Na//fHZ5/Pa5/N6
-fyR7k3ftN6coiib1t3tWDRhFFkpQj8pzLoXf46r3i6hJa8J1JTupzsccEzxl
-vVFIeN/54aXpBs5PUOfYISL8b3jDhWlZ71F3JbI8DJfLpge5N6nLOXYN2Y/c
-L6hYaeT48MmgTDlh/a2jN/y/cHsdaiOXeBP2Koy6kzvKpZcz6VIF8Z2rzn4S
-THDlOq96dSLZeyRuG7syxxk+xhoqDhJOm1kxUTXPTQlK+nrSCDflGGfqFrjQ
-pDkzv0wlWnaVnaBe/uLmvNq2C88qAS7uQ0G2GaIalcP6aiXE6kuCq/WWcOjO
-cBr/Ru5bZw+2Odvi4mRTdkpGBOx8+51sMhxhun0kPT4tErSqunZzsSueBhWV
-5uSoIF5f9FQkksEY19h1LE+F1d59Se9YGazyh8wPnVGB9nFzLA2XQdG+Pim2
-SAVsaEhwKpahM7gvYMt1FWI29dq6LFuLHoXbqGWrCqVBLlGednIMhjT4F5jx
-0Eg/zrhZ0Vik7k/LtuQh1B/vsHSg4VZoozu6mIdW5lJpcqcR1xG9LNGeR+la
-9VZdII2R0N+mEAkPnefPMmkujYltCq0wgIeBlQQwFl4wC+sdvJDFw8IvoZAz
-Z2BojnA9fJqHeD7y3Ct7Blr561hewwMPt1zYI2EgtjUMibU8snzExafAAF31
-ppoKHtS691faTzDICr040tNMWB54O2yegaJRKL3fSvLGGP2AgIWdVKMuf07y
-9OK7qatYVApOft3XTfLWLNQU+7JoeXFgfPoT8T1qH7zPYKHxHZb3fia+qbIx
-Pp/Fjluxyc1G4t883zRbwmJAE/0tb4z4rolPnBpY6H68pdXfeVQOqtr0z1ik
-xO9MDZvm0XIt8Jn/WxY+Hzpr2FkeAzFse/cQC0qhmHD8Sf6JJS92T/3PfwB6
-S0ec
-      "]], LineBox[CompressedData["
-1:eJxTTMoPSmViYGBQBmIQPUHdvvgBS6QDAxiYOERM37X5CAeCr8Bu9mUFD4K/
-4ZlOaaEIgu9wTPmbpQyCn9Aq+OOUNoLf4PL/Z7Q1gn/g0K2/tVEIPoPjNsYF
-lQi+y5pr6jsZouD8DvHvvpfaEfyCqORD35uj4fyHjSYp9lNj4HyRyTNvdS6M
-hfOXCWhVHp8dB+cfLJJ3VV8dD+fPU1ggYxuSAOfvrfnFkHEBwVf0Zv+jHJ4I
-5285r9l98wqC33Psn4FCbBKcP7n4ZVbCHQS/RlSOXykyGc5fqcl6quQBgs/2
-hVHyYFwKnL/cYGPdvOcIvmbSKr+/ualw/m3PnZtCXyP4lxZX6doXp8H5PzYH
-2ih9QvD/7yja2paXDud7G7i51nxF8I/H6mdmF2fA+VbsARu27kTw120o+P7/
-P4IPAJAjjhA=
-      "]]}, {}}, {{}, {}, {}}},
-  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  Axes->True,
-  AxesOrigin->{0, 0},
-  PlotRange->{{0, 200}, {0., 20.}},
-  PlotRangeClipping->True,
-  PlotRangePadding->{
-    Scaled[0.02], 
-    Scaled[0.02]}]], "Output",
- CellChangeTimes->{{3.523138330610257*^9, 3.52313839366811*^9}, 
-   3.523138437753981*^9, 3.523138485294051*^9, 3.523200367630929*^9, {
-   3.523200539675292*^9, 3.523200544109392*^9}}]
-}, Open  ]]
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`e1$$ = 80, $CellContext`e2$$ = 
+    100, $CellContext`p1$$ = "long", $CellContext`p2$$ = 
+    "short", $CellContext`t1$$ = "call", $CellContext`t2$$ = "call", 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold["Option1"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`p1$$], "long", ""}, {"long", "short"}}, {{
+       Hold[$CellContext`t1$$], "call", ""}, {"call", "put"}}, {{
+       Hold[$CellContext`e1$$], 80, ""}, 0, 200}, {
+      Hold[
+       Row[{
+         Manipulate`Place[1], 
+         Manipulate`Place[2], 
+         Manipulate`Place[3], 
+         Spacer[10], 
+         Dynamic[$CellContext`e1$$]}]], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["Option 2"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`p2$$], "short", ""}, {"long", "short"}}, {{
+       Hold[$CellContext`t2$$], "call", ""}, {"call", "put"}}, {{
+       Hold[$CellContext`e2$$], 100, ""}, 0, 200}, {
+      Hold[
+       Row[{
+         Manipulate`Place[4], 
+         Manipulate`Place[5], 
+         Manipulate`Place[6], 
+         Spacer[10], 
+         Dynamic[$CellContext`e2$$]}]], Manipulate`Dump`ThisIsNotAControl}}, 
+    Typeset`size$$ = {360., {112., 115.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, $CellContext`p1$989$$ =
+     False, $CellContext`t1$990$$ = False, $CellContext`e1$991$$ = 
+    0, $CellContext`p2$992$$ = False, $CellContext`t2$993$$ = 
+    False, $CellContext`e2$994$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`e1$$ = 80, $CellContext`e2$$ = 
+        100, $CellContext`p1$$ = "long", $CellContext`p2$$ = 
+        "short", $CellContext`t1$$ = "call", $CellContext`t2$$ = "call"}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`p1$$, $CellContext`p1$989$$, False], 
+        Hold[$CellContext`t1$$, $CellContext`t1$990$$, False], 
+        Hold[$CellContext`e1$$, $CellContext`e1$991$$, 0], 
+        Hold[$CellContext`p2$$, $CellContext`p2$992$$, False], 
+        Hold[$CellContext`t2$$, $CellContext`t2$993$$, False], 
+        Hold[$CellContext`e2$$, $CellContext`e2$994$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        FinancialOptions`PortfolioPayoff[{
+          
+          FinancialOptions`MkOption[$CellContext`p1$$, $CellContext`t1$$, \
+$CellContext`e1$$], 
+          
+          FinancialOptions`MkOption[$CellContext`p2$$, $CellContext`t2$$, \
+$CellContext`e2$$]}, $CellContext`S], {$CellContext`S, 0, 200}, 
+        AxesOrigin -> {0, 0}], 
+      "Specifications" :> {
+       "Option1", {{$CellContext`p1$$, "long", ""}, {"long", "short"}, 
+         ControlPlacement -> 1}, {{$CellContext`t1$$, "call", ""}, {
+         "call", "put"}, ControlPlacement -> 2}, {{$CellContext`e1$$, 80, ""},
+          0, 200, ControlPlacement -> 3}, 
+        Row[{
+          Manipulate`Place[1], 
+          Manipulate`Place[2], 
+          Manipulate`Place[3], 
+          Spacer[10], 
+          Dynamic[$CellContext`e1$$]}], 
+        "Option 2", {{$CellContext`p2$$, "short", ""}, {"long", "short"}, 
+         ControlPlacement -> 4}, {{$CellContext`t2$$, "call", ""}, {
+         "call", "put"}, ControlPlacement -> 
+         5}, {{$CellContext`e2$$, 100, ""}, 0, 200, ControlPlacement -> 6}, 
+        Row[{
+          Manipulate`Place[4], 
+          Manipulate`Place[5], 
+          Manipulate`Place[6], 
+          Spacer[10], 
+          Dynamic[$CellContext`e2$$]}]}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{453., {194., 199.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.523208225011956*^9, 3.52320823277264*^9}, {
+  3.523208341639896*^9, 3.5232083675372467`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"PortfolioPayoff", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"MkOption", "[", 
+          RowBox[{"p1", ",", " ", "t1", ",", " ", "e1"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"MkOption", "[", 
+          RowBox[{"p2", ",", " ", "t2", ",", " ", "e2"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"MkOption", "[", 
+          RowBox[{"p3", ",", " ", "t3", ",", " ", "e3"}], "]"}]}], "}"}], ",",
+        " ", "\[IndentingNewLine]", "S"}], "]"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"S", ",", " ", "0", ",", " ", "200"}], "}"}], ",", " ", 
+     RowBox[{"AxesOrigin", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}]}], "]"}], ",", " ", 
+   "\[IndentingNewLine]", "\"\<Option1\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"p1", ",", " ", "\"\<long\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<long\>\"", ",", " ", "\"\<short\>\""}], "}"}]}], "}"}],
+        "]"}], ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"t1", ",", " ", "\"\<call\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<call\>\"", ",", " ", "\"\<put\>\""}], "}"}]}], "}"}], 
+       "]"}], ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"e1", ",", " ", "80", ",", " ", "\"\<\>\""}], "}"}], ",", 
+         " ", "0", ",", " ", "200"}], "}"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Spacer", "[", "10", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", "e1", "]"}]}], "\[IndentingNewLine]", "}"}], 
+    "]"}], ",", "\[IndentingNewLine]", "\"\<Option 2\>\"", ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"p2", ",", " ", "\"\<short\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<long\>\"", ",", " ", "\"\<short\>\""}], "}"}]}], "}"}],
+        "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"t2", ",", " ", "\"\<call\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<call\>\"", ",", " ", "\"\<put\>\""}], "}"}]}], "}"}], 
+       "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"e2", ",", " ", "100", ",", " ", "\"\<\>\""}], "}"}], ",", 
+         " ", "0", ",", " ", "200"}], "}"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Spacer", "[", "10", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", "e2", "]"}]}], "\[IndentingNewLine]", "}"}], 
+    "]"}], ",", "\[IndentingNewLine]", "\"\<Option 3\>\"", ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"p3", ",", " ", "\"\<short\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<long\>\"", ",", " ", "\"\<short\>\""}], "}"}]}], "}"}],
+        "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"t3", ",", " ", "\"\<call\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<call\>\"", ",", " ", "\"\<put\>\""}], "}"}]}], "}"}], 
+       "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"e3", ",", " ", "120", ",", " ", "\"\<\>\""}], "}"}], ",", 
+         " ", "0", ",", " ", "200"}], "}"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Spacer", "[", "10", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", "e3", "]"}]}], "\[IndentingNewLine]", "}"}], 
+    "]"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.523202623086534*^9, 3.5232026254895973`*^9}, 
+   3.5232027393462563`*^9, {3.523206942307186*^9, 3.523207090324871*^9}, {
+   3.5232071363587217`*^9, 3.5232071368222847`*^9}, {3.523207201750497*^9, 
+   3.523207264006412*^9}, 3.523208182112791*^9, {3.523208240003039*^9, 
+   3.523208299343438*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`e1$$ = 80, $CellContext`e2$$ = 
+    100, $CellContext`e3$$ = 120, $CellContext`p1$$ = 
+    "long", $CellContext`p2$$ = "short", $CellContext`p3$$ = 
+    "short", $CellContext`t1$$ = "call", $CellContext`t2$$ = 
+    "call", $CellContext`t3$$ = "call", Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold["Option1"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`p1$$], "long", ""}, {"long", "short"}}, {{
+       Hold[$CellContext`t1$$], "call", ""}, {"call", "put"}}, {{
+       Hold[$CellContext`e1$$], 80, ""}, 0, 200}, {
+      Hold[
+       Row[{
+         Manipulate`Place[1], 
+         Manipulate`Place[2], 
+         Manipulate`Place[3], 
+         Spacer[10], 
+         Dynamic[$CellContext`e1$$]}]], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["Option 2"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`p2$$], "short", ""}, {"long", "short"}}, {{
+       Hold[$CellContext`t2$$], "call", ""}, {"call", "put"}}, {{
+       Hold[$CellContext`e2$$], 100, ""}, 0, 200}, {
+      Hold[
+       Row[{
+         Manipulate`Place[4], 
+         Manipulate`Place[5], 
+         Manipulate`Place[6], 
+         Spacer[10], 
+         Dynamic[$CellContext`e2$$]}]], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["Option 3"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`p3$$], "short", ""}, {"long", "short"}}, {{
+       Hold[$CellContext`t3$$], "call", ""}, {"call", "put"}}, {{
+       Hold[$CellContext`e3$$], 120, ""}, 0, 200}, {
+      Hold[
+       Row[{
+         Manipulate`Place[7], 
+         Manipulate`Place[8], 
+         Manipulate`Place[9], 
+         Spacer[10], 
+         Dynamic[$CellContext`e3$$]}]], Manipulate`Dump`ThisIsNotAControl}}, 
+    Typeset`size$$ = {360., {104., 108.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`p1$1039$$ = False, $CellContext`t1$1040$$ = 
+    False, $CellContext`e1$1041$$ = 0, $CellContext`p2$1042$$ = 
+    False, $CellContext`t2$1043$$ = False, $CellContext`e2$1044$$ = 
+    0, $CellContext`p3$1045$$ = False, $CellContext`t3$1046$$ = 
+    False, $CellContext`e3$1047$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`e1$$ = 80, $CellContext`e2$$ = 
+        100, $CellContext`e3$$ = 120, $CellContext`p1$$ = 
+        "long", $CellContext`p2$$ = "short", $CellContext`p3$$ = 
+        "short", $CellContext`t1$$ = "call", $CellContext`t2$$ = 
+        "call", $CellContext`t3$$ = "call"}, "ControllerVariables" :> {
+        Hold[$CellContext`p1$$, $CellContext`p1$1039$$, False], 
+        Hold[$CellContext`t1$$, $CellContext`t1$1040$$, False], 
+        Hold[$CellContext`e1$$, $CellContext`e1$1041$$, 0], 
+        Hold[$CellContext`p2$$, $CellContext`p2$1042$$, False], 
+        Hold[$CellContext`t2$$, $CellContext`t2$1043$$, False], 
+        Hold[$CellContext`e2$$, $CellContext`e2$1044$$, 0], 
+        Hold[$CellContext`p3$$, $CellContext`p3$1045$$, False], 
+        Hold[$CellContext`t3$$, $CellContext`t3$1046$$, False], 
+        Hold[$CellContext`e3$$, $CellContext`e3$1047$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        FinancialOptions`PortfolioPayoff[{
+          
+          FinancialOptions`MkOption[$CellContext`p1$$, $CellContext`t1$$, \
+$CellContext`e1$$], 
+          
+          FinancialOptions`MkOption[$CellContext`p2$$, $CellContext`t2$$, \
+$CellContext`e2$$], 
+          
+          FinancialOptions`MkOption[$CellContext`p3$$, $CellContext`t3$$, \
+$CellContext`e3$$]}, $CellContext`S], {$CellContext`S, 0, 200}, 
+        AxesOrigin -> {0, 0}], 
+      "Specifications" :> {
+       "Option1", {{$CellContext`p1$$, "long", ""}, {"long", "short"}, 
+         ControlPlacement -> 1}, {{$CellContext`t1$$, "call", ""}, {
+         "call", "put"}, ControlPlacement -> 2}, {{$CellContext`e1$$, 80, ""},
+          0, 200, ControlPlacement -> 3}, 
+        Row[{
+          Manipulate`Place[1], 
+          Manipulate`Place[2], 
+          Manipulate`Place[3], 
+          Spacer[10], 
+          Dynamic[$CellContext`e1$$]}], 
+        "Option 2", {{$CellContext`p2$$, "short", ""}, {"long", "short"}, 
+         ControlPlacement -> 4}, {{$CellContext`t2$$, "call", ""}, {
+         "call", "put"}, ControlPlacement -> 
+         5}, {{$CellContext`e2$$, 100, ""}, 0, 200, ControlPlacement -> 6}, 
+        Row[{
+          Manipulate`Place[4], 
+          Manipulate`Place[5], 
+          Manipulate`Place[6], 
+          Spacer[10], 
+          Dynamic[$CellContext`e2$$]}], 
+        "Option 3", {{$CellContext`p3$$, "short", ""}, {"long", "short"}, 
+         ControlPlacement -> 7}, {{$CellContext`t3$$, "call", ""}, {
+         "call", "put"}, ControlPlacement -> 
+         8}, {{$CellContext`e3$$, 120, ""}, 0, 200, ControlPlacement -> 9}, 
+        Row[{
+          Manipulate`Place[7], 
+          Manipulate`Place[8], 
+          Manipulate`Place[9], 
+          Spacer[10], 
+          Dynamic[$CellContext`e3$$]}]}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{453., {214., 219.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.5232082753459797`*^9, 3.523208299940295*^9}, {
+  3.523208341800633*^9, 3.523208367672719*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.52320817918139*^9, 3.523208183359467*^9}}]
 }, Open  ]]
 },
-WindowSize->{740, 756},
-WindowMargins->{{398, Automatic}, {Automatic, 159}},
+WindowSize->{984, 929},
+WindowMargins->{{Automatic, 304}, {Automatic, 63}},
+ShowSelection->True,
 FrontEndVersion->"8.0 for Linux x86 (64-bit) (November 7, 2010)",
 StyleDefinitions->"Default.nb"
 ]
@@ -217,15 +611,20 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 157, 2, 83, "Title"],
-Cell[739, 26, 118, 2, 30, "Input"],
+Cell[739, 26, 416, 7, 30, "Input"],
 Cell[CellGroupData[{
-Cell[882, 32, 567, 16, 50, "Input"],
-Cell[1452, 50, 3834, 72, 223, "Output"]
+Cell[1180, 37, 567, 16, 50, "Input"],
+Cell[1750, 55, 4622, 83, 223, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5323, 127, 548, 14, 69, "Input"],
-Cell[5874, 143, 2781, 54, 242, "Output"]
-}, Open  ]]
+Cell[6409, 143, 3931, 92, 411, "Input"],
+Cell[10343, 237, 4415, 94, 410, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14795, 336, 5018, 123, 601, "Input"],
+Cell[19816, 461, 5924, 126, 450, "Output"]
+}, Open  ]],
+Cell[25755, 590, 91, 1, 30, "Input"]
 }, Open  ]]
 }
 ]
