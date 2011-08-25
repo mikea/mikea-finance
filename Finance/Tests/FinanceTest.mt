@@ -1,48 +1,102 @@
 (* Mathematica Test File *)
 
 Test[
-	MkOption[long, call, 120]
+	MkSecurity[Position->long, Quantity->2, Asset->{}]
 	,
-	{"position" -> "long", "type" -> "call", "strike" -> 120}
+	{"position" -> "long", "quantity" -> 2, "asset" -> {}}
+	,
+	TestID->"FinanceTest-MkSecurity"
+]
+
+Test[
+	MkSecurity[Quantity->2, Asset->{}]
+	,
+	Indeterminate
+	,
+	Message[Message::name, "Position not specified"]
+	,
+	TestID->"FinanceTest-MkSecurity-NoPosition"
+]
+
+Test[
+	MkSecurity[Position -> "long", Quantity->2]
+	,
+	Indeterminate
+	,
+	Message[Message::name, "Asset not specified"]
+	,
+	TestID->"FinanceTest-MkSecurity-NoAsset"
+]
+
+Test[
+	MkSecurity[Position -> "unknown", Quantity->2, Asset->{}]
+	,
+	Indeterminate
+	,
+	Message[Message::name, "Wrong position. Should be long or short"]
+	,
+	TestID->"FinanceTest-MkSecurity-WrongPosition"
+]
+
+Test[
+	MkOption[Position->long, Type->call, Strike->120]
+	,
+	{"position" -> "long", "quantity" -> 1., "asset" -> {"class" -> "option", "type" -> "call", "strike" -> 120}}
 	,
 	TestID->"FinanceTest-MkOption"
 ]
 
 Test[
-	OptionPayoff[MkOption[long, call, 100], S]
+	Payoff[MkOption[Position->long, Type->call, Strike->100], S]
 	,
-	Max[0, -100 + S],
+	1. * Max[0, -100 + S],
 	TestID->"FinanceTest-OptionPayoff1"
 ]
 
 Test[
-	OptionPayoff[MkOption[long, put, 100], S]
+	Payoff[MkOption[Position->long, Type->put, Strike->100], S]
 	,
-	Max[0, 100 - S],
+	1. * Max[0, 100 - S],
 	TestID->"FinanceTest-OptionPayof2"
 ]
 
 Test[
-	OptionPayoff[MkOption[short, call, 100], S]
+	Payoff[MkOption[Position->short, Type->call, Strike->100], S]
 	,
-	- Max[0, -100 + S],
+	-1. * Max[0, -100 + S],
 	TestID->"FinanceTest-OptionPayoff1"
 ]
 
 Test[
-	OptionPayoff[MkOption[short, put, 100], S]
+	Payoff[MkOption[Position->short, Type->put, Strike->100], S]
 	,
-	- Max[0, 100 - S]
+	-1. * Max[0, 100 - S]
 	,
 	TestID->"FinanceTest-OptionPayof2"
 ]
 
 Test[
-	PortfolioPayoff[{MkOption[short, put, 100], MkOption[long, call, 100]}, S]
+	PortfolioPayoff[{MkOption[Position->short, Type->put, Strike->100], MkOption[Position->long, Type->call, Strike->100]}, S]
 	,
-	-Max[0, 100 - S] + Max[0, -100 + S]
+	-1. * Max[0, 100 - S] + 1. * Max[0, -100 + S]
 	,
 	TestID->"FinanceTest-PortfolioPayoff"
 ]
 
-		
+Test[
+	MkBond[Position->long, Price->120]
+	,
+	{"position" -> "long", "quantity" -> 1., "asset" -> {"class" -> "bond", "price" -> 120}}
+	,
+	TestID->"FinanceTest-MkBond"
+]
+
+Test[
+	Payoff[MkBond[Position->long, Price->120], S]
+	,
+	120.
+	,
+	TestID->"FinanceTest-BondPayoff"
+]
+
+				
