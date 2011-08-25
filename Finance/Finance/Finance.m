@@ -1,7 +1,9 @@
-(* ::Package:: *)
+(* Mathematica Package *)
 
-BeginPackage["FinancialOptions`"];
+(* Created by the Wolfram Workbench Aug 25, 2011 *)
 
+BeginPackage["Finance`"]
+(* Exported symbols added here with SymbolName::usage *) 
 MkOption::usage = 
 "MkOption[position, type, strike]
 	Creates new option object.";
@@ -15,6 +17,7 @@ PortfolioPayoff::usage =
 	Calculates portfolio payoff.";
 
 Begin["`Private`"];
+(* Implementation of the package *)
 
 MkOption[aposition_, atype_, astrike_] := 
 	{"position"->ToString[aposition],"type"->ToString[atype],"strike"->astrike};
@@ -32,5 +35,7 @@ OptionPayoff[option_, price_]:=
 
 PortfolioPayoff[portfolio_, price_]:=Fold[Plus, 0, OptionPayoff[#, price]& /@portfolio ];
 
-End[ ];
-EndPackage[ ];
+End[]
+
+EndPackage[]
+
