@@ -10,19 +10,29 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     26694,        626]
-NotebookOptionsPosition[     26110,        601]
-NotebookOutlinePosition[     26448,        616]
-CellTagsIndexPosition[     26405,        613]
+NotebookDataLength[     42058,        964]
+NotebookOptionsPosition[     41099,        925]
+NotebookOutlinePosition[     41437,        940]
+CellTagsIndexPosition[     41394,        937]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell["Finance Package Demo", "Title",
+ CellChangeTimes->{{3.5237301708011093`*^9, 3.523730175183598*^9}}],
+
 Cell[BoxData[
  RowBox[{"Needs", "[", "\"\<Finance`\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.523284522084215*^9, 3.5232845300201597`*^9}, {
   3.523285620029304*^9, 3.5232856501556587`*^9}, {3.523285688302629*^9, 
   3.5232856930204067`*^9}, {3.523285974413458*^9, 3.523285988061646*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Payoff Function", "Section",
+ CellChangeTimes->{{3.523730179278635*^9, 3.523730183527917*^9}}],
 
 Cell[CellGroupData[{
 
@@ -138,7 +148,89 @@ uLnWfEXwj8fqZ2YXZ8D5VuwBG7buRPDXbSj4/v8/gg8A3NLqDw==
    3.523285568824533*^9, {3.523285612508363*^9, 3.52328563273389*^9}, 
    3.523285908976796*^9, 3.523285996244681*^9, {3.523288551704134*^9, 
    3.523288566369562*^9}, {3.5232890640283127`*^9, 3.5232891493788347`*^9}, {
-   3.523289541050222*^9, 3.523289567947927*^9}}]
+   3.523289541050222*^9, 3.523289567947927*^9}, 3.523729936134816*^9, 
+   3.5237302174549227`*^9},
+ ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJzlm3l0VNUdx78UbFXAqtVWix6tgsppxVqroqhYtVqLgIKoISxZWLJIgBD2
+JayhrLKJQCwQCComgSQKwbBIEgIkkIQlC0mAbGQn62SfTKbv3vd7M5Pp3HcZ
+xR7P6R8zmfedz+/e++67v+W+NxnsHuA1fpJ7gLen+8Nv+btP8fL2nPbwm5P9
+FalrF6CLF4BzD4N9Nisf6a0XzGYzuoIfKJ/4i70P4h/xU3z/JGnVV0thbGmz
+2vSyseEmGnlsSShOb452TApab65twK4hC1B5qUhq04+03NizCHdfDZOxXbX5
+vdjmKdJipm9D2u4j1rHdL7cxlFUjZPB81BSUS23+TFp6RAKifDfC3NGh2twn
+t+kwdSDKZwMy9idKbZ4mjY0p5J15aKioUW1+J7b5C2mpIbGImRFsnYPfym3Y
+HIe7r1LmPEVq8wxp7Fqya8quLf/mXrHNX0lj6+boot3Wsd1jv8o0kq3FLz9a
+hoKTGf9N2rX+LGnFqbnYM3wR2hpbVJvfiG2eIy1+1ddIWBNmHdHdcpvWhmbe
+T+n5K1Kb50nLP5GOr1yC0N7aptrcJbbpT9qRhbuQ9Nk31rHdKbdpqjZg91DF
+07KLpDYvkJbzHXlau0m1+bXY5kXSDtp72h2qTQ/+pzvM7TVIDpmHN+6/D68v
+jkZZm0IZyxA94wP4rtyMFT4fYOa35TAqdDedfgzlNZ29k/rpyf/cDnPrFax9
+7hkszW7hSv0pNzzR/98oNJphLNiK5/qOQ7LB7KiLAaRl7DuhOPMG7qD8G7Vt
+KF+xv82XN2LqeE/lyNPTE3fB02suIkvbLM2YO+qQvNAD0xYtx/Kl0zHowV54
+c/oniCqpx6VFT6KPx1k0MM5wBqN790NQTovDM9aGw2IKG076voROw+nO//RA
+c24wpgTnornTmTcizecxPOF/AU2svcbz8Hv8cfidb3TU1Uu24UWZXBYC+Tc9
+OndlNrfgSsgs7MjIwBpLVy3IXtLP5rSStdPiXd3COtLOJS30CF8pllXS3W6V
+tBYibM5cTHzS5gomeaJv/+0ooiv4fN/x7Ao6nLOXtfilrNwIj9XIOXSmUz/a
+KjGWRWDko09Z+jAby3Fw7mj4r/8ca/1GYm5MBVuJjrp4RQt3Odd4uGMOxr+5
+XewkA0lL2vItjgSGWE//NrkNCxBfjQziAUNm8yppLBCFDlvEAxP/5laxzd9I
+S1gbzoOfZWy/ktuwwLrn/cU80MpsXiOt4FSmEsiXqsUF034ptnmdtKOLQ3Hq
+U5sS4xa5DUtDLPBVZBVKbd4gLfdwCsLcVllLjG42Ntzk70TGzAxGipJYLSPq
+Km5ds2FJm4eu/DKpzZtaLFKKg0jv9dZY9Au5jRowNuJieLzU5i1bz1cKC0Mp
+eX4Xsc0/NGdWwv0B/y3WOdDHmU+yrJIdk6yHv635Fy8n5qOpqh4dYvyfpLFK
+4vCCnfzIJMe1ciIv/oIePog0tsBDhy3kDtUuxt8hjflR3Mq9/Mhov4Q0iLXF
+nJS1bRS3OZg05v9sxGzkbWJ8CGmsVtCq8lY5zqKYVpDr4ENJUysE1VFaxPi7
+pLGQn7rrMD9qluO2FbgO/h5pLDGyBMnWfZMct82nOvgwW8+gnNgoxofbOIWW
+4RrkuG2i0sHf15zCJukY7BfWCIKStlqzTL24TQ1nCWav63LkJVzUwz8grfT8
+VYsr1InxD0k7sTYCcStUV6iV4zyjjFAySkqOHv4RaYVaMmluRY0YdyGNbVVP
+bYriR9VynKeQdwN5CtHBR5Jmmz2qVFytCVjV0YAUr0dxb78BGDhwoPJ6GS+8
+6I6Tdc5Vwa6k2aaf62pXWo1mLP8WARN3ILdZNWmvz0VRo8mZQljrxTZhUS8O
+a+CunWpgleiOlvxwzJu6HnEVRmq5xan6dxRpGZGJfJ/MUmClOgpLGaecq99L
+w7A6VckRkpKX16GuiI9dpbS5O9ANUVun8aM80hKPrbf0fWvnfsxmEyoiX8MD
+T6/D1Vb9epfOIvN8FH+N5u9dkXI8FNsneCAt4UulR1XLTj9o36N1wZhQFeuG
+wSuy0awohqSReOSPgchqdq4gHqOFJVZ4B2zlR+WdF0x71XEscxuPoOBgBLkN
+gV9YMdrMTtXEWi+WaKakh3Kxw4zVoll2kSWalYlxNy2uKVtfLa6VynFeOCs7
+bBbXdHB30krOXbbEtRIx7kFawuowS1wrluPaLQIW13RwT9IKEjMsce2aGB9H
+GruFcmpTJD8qkuPNNWqyL88s6IRzerwWzWLPImzsSpja2lEobnOCFpGUnJey
+4zt+VCDH+TZeqTfZbUYdfKIWA5QteaQXK4NNyJfjlgo4LE4P9yKttrCCD6a+
+pErxTSHubeNLWt17VY5zp/Bcw+teHdyHtOs8xat17xUx7qs5hZLstbr3shy3
+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
+8h981w69\
+\>"]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -267,22 +359,22 @@ Cell[BoxData[
          Spacer[10], 
          Dynamic[$CellContext`e2$$]}]], Manipulate`Dump`ThisIsNotAControl}}, 
     Typeset`size$$ = {360., {112., 115.}}, Typeset`update$$ = 0, 
-    Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`p1$1029$$ = False, $CellContext`t1$1030$$ = 
-    False, $CellContext`e1$1031$$ = 0, $CellContext`p2$1032$$ = 
-    False, $CellContext`t2$1033$$ = False, $CellContext`e2$1034$$ = 0}, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, $CellContext`p1$924$$ =
+     False, $CellContext`t1$925$$ = False, $CellContext`e1$926$$ = 
+    0, $CellContext`p2$927$$ = False, $CellContext`t2$928$$ = 
+    False, $CellContext`e2$929$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      2, StandardForm, 
       "Variables" :> {$CellContext`e1$$ = 80, $CellContext`e2$$ = 
         100, $CellContext`p1$$ = "long", $CellContext`p2$$ = 
         "short", $CellContext`t1$$ = "call", $CellContext`t2$$ = "call"}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`p1$$, $CellContext`p1$1029$$, False], 
-        Hold[$CellContext`t1$$, $CellContext`t1$1030$$, False], 
-        Hold[$CellContext`e1$$, $CellContext`e1$1031$$, 0], 
-        Hold[$CellContext`p2$$, $CellContext`p2$1032$$, False], 
-        Hold[$CellContext`t2$$, $CellContext`t2$1033$$, False], 
-        Hold[$CellContext`e2$$, $CellContext`e2$1034$$, 0]}, 
+        Hold[$CellContext`p1$$, $CellContext`p1$924$$, False], 
+        Hold[$CellContext`t1$$, $CellContext`t1$925$$, False], 
+        Hold[$CellContext`e1$$, $CellContext`e1$926$$, 0], 
+        Hold[$CellContext`p2$$, $CellContext`p2$927$$, False], 
+        Hold[$CellContext`t2$$, $CellContext`t2$928$$, False], 
+        Hold[$CellContext`e2$$, $CellContext`e2$929$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -332,7 +424,8 @@ $CellContext`S], {$CellContext`S, 0, 200}, AxesOrigin -> {0, 0}],
   3.52328456939513*^9, {3.523285566290637*^9, 3.523285568910033*^9}, {
    3.5232856125962048`*^9, 3.523285632881675*^9}, 3.523285909021377*^9, 
    3.523285996279297*^9, {3.5232885517627497`*^9, 3.523288566435802*^9}, {
-   3.5232890640781813`*^9, 3.523289149427232*^9}, 3.5232895680995893`*^9}]
+   3.5232890640781813`*^9, 3.523289149427232*^9}, 3.5232895680995893`*^9, 
+   3.523729936261561*^9, 3.523730217493307*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -513,11 +606,11 @@ Cell[BoxData[
          Dynamic[$CellContext`e3$$]}]], Manipulate`Dump`ThisIsNotAControl}}, 
     Typeset`size$$ = {360., {104., 108.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`p1$1307$$ = False, $CellContext`t1$1308$$ = 
-    False, $CellContext`e1$1309$$ = 0, $CellContext`p2$1310$$ = 
-    False, $CellContext`t2$1311$$ = False, $CellContext`e2$1312$$ = 
-    0, $CellContext`p3$1313$$ = False, $CellContext`t3$1314$$ = 
-    False, $CellContext`e3$1315$$ = 0}, 
+    True, $CellContext`p1$1203$$ = False, $CellContext`t1$1204$$ = 
+    False, $CellContext`e1$1205$$ = 0, $CellContext`p2$1206$$ = 
+    False, $CellContext`t2$1207$$ = False, $CellContext`e2$1208$$ = 
+    0, $CellContext`p3$1209$$ = False, $CellContext`t3$1210$$ = 
+    False, $CellContext`e3$1211$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      2, StandardForm, 
       "Variables" :> {$CellContext`e1$$ = 80, $CellContext`e2$$ = 
@@ -525,15 +618,15 @@ Cell[BoxData[
         "long", $CellContext`p2$$ = "short", $CellContext`p3$$ = 
         "short", $CellContext`t1$$ = "call", $CellContext`t2$$ = 
         "call", $CellContext`t3$$ = "call"}, "ControllerVariables" :> {
-        Hold[$CellContext`p1$$, $CellContext`p1$1307$$, False], 
-        Hold[$CellContext`t1$$, $CellContext`t1$1308$$, False], 
-        Hold[$CellContext`e1$$, $CellContext`e1$1309$$, 0], 
-        Hold[$CellContext`p2$$, $CellContext`p2$1310$$, False], 
-        Hold[$CellContext`t2$$, $CellContext`t2$1311$$, False], 
-        Hold[$CellContext`e2$$, $CellContext`e2$1312$$, 0], 
-        Hold[$CellContext`p3$$, $CellContext`p3$1313$$, False], 
-        Hold[$CellContext`t3$$, $CellContext`t3$1314$$, False], 
-        Hold[$CellContext`e3$$, $CellContext`e3$1315$$, 0]}, 
+        Hold[$CellContext`p1$$, $CellContext`p1$1203$$, False], 
+        Hold[$CellContext`t1$$, $CellContext`t1$1204$$, False], 
+        Hold[$CellContext`e1$$, $CellContext`e1$1205$$, 0], 
+        Hold[$CellContext`p2$$, $CellContext`p2$1206$$, False], 
+        Hold[$CellContext`t2$$, $CellContext`t2$1207$$, False], 
+        Hold[$CellContext`e2$$, $CellContext`e2$1208$$, 0], 
+        Hold[$CellContext`p3$$, $CellContext`p3$1209$$, False], 
+        Hold[$CellContext`t3$$, $CellContext`t3$1210$$, False], 
+        Hold[$CellContext`e3$$, $CellContext`e3$1211$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -596,7 +689,238 @@ $CellContext`S], {$CellContext`S, 0, 200}, AxesOrigin -> {0, 0}],
   3.5232845787408733`*^9, 3.523285569040728*^9, {3.5232856127723494`*^9, 
    3.5232856329429283`*^9}, 3.523285909167997*^9, 3.523285996436343*^9, {
    3.523288551941661*^9, 3.523288566621798*^9}, {3.523289064200285*^9, 
-   3.523289149573419*^9}, 3.523289568151003*^9}]
+   3.523289149573419*^9}, 3.523289568151003*^9, 3.5237299363109493`*^9, 
+   3.5237302176748657`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Binomial Price", "Section",
+ CellChangeTimes->{{3.523729948799968*^9, 3.5237299743740463`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"BinomialPrice", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"MkOption", "[", 
+            RowBox[{
+             RowBox[{"Position", "->", "p1"}], ",", " ", 
+             RowBox[{"Type", "->", "t1"}], ",", " ", 
+             RowBox[{"Strike", "->", "e1"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"MkOption", "[", 
+            RowBox[{
+             RowBox[{"Position", "->", "p2"}], ",", " ", 
+             RowBox[{"Type", "->", "t2"}], ",", " ", 
+             RowBox[{"Strike", "->", "e2"}]}], "]"}]}], "\[IndentingNewLine]",
+           "}"}], ",", "\[IndentingNewLine]", "S", ",", " ", "20", ",", " ", 
+         "0.1", ",", " ", 
+         RowBox[{"1", "/", "3"}], ",", " ", "0.2"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PortfolioPayoff", "[", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"MkOption", "[", 
+            RowBox[{
+             RowBox[{"Position", "->", "p1"}], ",", " ", 
+             RowBox[{"Type", "->", "t1"}], ",", " ", 
+             RowBox[{"Strike", "->", "e1"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"MkOption", "[", 
+            RowBox[{
+             RowBox[{"Position", "->", "p2"}], ",", " ", 
+             RowBox[{"Type", "->", "t2"}], ",", " ", 
+             RowBox[{"Strike", "->", "e2"}]}], "]"}]}], "}"}], ",", " ", 
+         "\[IndentingNewLine]", "S"}], "]"}]}], "\[IndentingNewLine]", "}"}], 
+     " ", ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"S", ",", " ", "0", ",", " ", "200"}], "}"}], ",", " ", 
+     RowBox[{"AxesOrigin", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", " ", "0"}], "}"}]}]}], "]"}], ",", " ", 
+   "\[IndentingNewLine]", "\"\<Option1\>\"", ",", "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"p1", ",", " ", "\"\<long\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<long\>\"", ",", " ", "\"\<short\>\""}], "}"}]}], "}"}],
+        "]"}], ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"t1", ",", " ", "\"\<call\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<call\>\"", ",", " ", "\"\<put\>\""}], "}"}]}], "}"}], 
+       "]"}], ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"e1", ",", " ", "80", ",", " ", "\"\<\>\""}], "}"}], ",", 
+         " ", "0", ",", " ", "200"}], "}"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Spacer", "[", "10", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", "e1", "]"}]}], "\[IndentingNewLine]", "}"}], 
+    "]"}], ",", "\[IndentingNewLine]", "\"\<Option 2\>\"", ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Row", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"p2", ",", " ", "\"\<short\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<long\>\"", ",", " ", "\"\<short\>\""}], "}"}]}], "}"}],
+        "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"t2", ",", " ", "\"\<call\>\"", ",", " ", "\"\<\>\""}], 
+          "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<call\>\"", ",", " ", "\"\<put\>\""}], "}"}]}], "}"}], 
+       "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Control", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"e2", ",", " ", "100", ",", " ", "\"\<\>\""}], "}"}], ",", 
+         " ", "0", ",", " ", "200"}], "}"}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Spacer", "[", "10", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", "e2", "]"}]}], "\[IndentingNewLine]", "}"}], 
+    "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.52372998065088*^9, 3.523730094808446*^9}, {
+  3.523730197703822*^9, 3.523730205064765*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`e1$$ = 80, $CellContext`e2$$ = 
+    121.5, $CellContext`p1$$ = "long", $CellContext`p2$$ = 
+    "short", $CellContext`t1$$ = "call", $CellContext`t2$$ = "call", 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold["Option1"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`p1$$], "long", ""}, {"long", "short"}}, {{
+       Hold[$CellContext`t1$$], "call", ""}, {"call", "put"}}, {{
+       Hold[$CellContext`e1$$], 80, ""}, 0, 200}, {
+      Hold[
+       Row[{
+         Manipulate`Place[1], 
+         Manipulate`Place[2], 
+         Manipulate`Place[3], 
+         Spacer[10], 
+         Dynamic[$CellContext`e1$$]}]], Manipulate`Dump`ThisIsNotAControl}, {
+      Hold["Option 2"], Manipulate`Dump`ThisIsNotAControl}, {{
+       Hold[$CellContext`p2$$], "short", ""}, {"long", "short"}}, {{
+       Hold[$CellContext`t2$$], "call", ""}, {"call", "put"}}, {{
+       Hold[$CellContext`e2$$], 100, ""}, 0, 200}, {
+      Hold[
+       Row[{
+         Manipulate`Place[4], 
+         Manipulate`Place[5], 
+         Manipulate`Place[6], 
+         Spacer[10], 
+         Dynamic[$CellContext`e2$$]}]], Manipulate`Dump`ThisIsNotAControl}}, 
+    Typeset`size$$ = {360., {111., 115.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`p1$1685$$ = False, $CellContext`t1$1686$$ = 
+    False, $CellContext`e1$1687$$ = 0, $CellContext`p2$1688$$ = 
+    False, $CellContext`t2$1689$$ = False, $CellContext`e2$1690$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     2, StandardForm, 
+      "Variables" :> {$CellContext`e1$$ = 80, $CellContext`e2$$ = 
+        100, $CellContext`p1$$ = "long", $CellContext`p2$$ = 
+        "short", $CellContext`t1$$ = "call", $CellContext`t2$$ = "call"}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`p1$$, $CellContext`p1$1685$$, False], 
+        Hold[$CellContext`t1$$, $CellContext`t1$1686$$, False], 
+        Hold[$CellContext`e1$$, $CellContext`e1$1687$$, 0], 
+        Hold[$CellContext`p2$$, $CellContext`p2$1688$$, False], 
+        Hold[$CellContext`t2$$, $CellContext`t2$1689$$, False], 
+        Hold[$CellContext`e2$$, $CellContext`e2$1690$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[{
+         Finance`BinomialPrice[{
+           Finance`MkOption[
+           Position -> $CellContext`p1$$, $CellContext`Type -> \
+$CellContext`t1$$, $CellContext`Strike -> $CellContext`e1$$], 
+           Finance`MkOption[
+           Position -> $CellContext`p2$$, $CellContext`Type -> \
+$CellContext`t2$$, $CellContext`Strike -> $CellContext`e2$$]}, $CellContext`S,
+           20, 0.1, 1/3, 0.2], 
+         Finance`PortfolioPayoff[{
+           Finance`MkOption[
+           Position -> $CellContext`p1$$, $CellContext`Type -> \
+$CellContext`t1$$, $CellContext`Strike -> $CellContext`e1$$], 
+           Finance`MkOption[
+           Position -> $CellContext`p2$$, $CellContext`Type -> \
+$CellContext`t2$$, $CellContext`Strike -> $CellContext`e2$$]}, \
+$CellContext`S]}, {$CellContext`S, 0, 200}, AxesOrigin -> {0, 0}], 
+      "Specifications" :> {
+       "Option1", {{$CellContext`p1$$, "long", ""}, {"long", "short"}, 
+         ControlPlacement -> 1}, {{$CellContext`t1$$, "call", ""}, {
+         "call", "put"}, ControlPlacement -> 2}, {{$CellContext`e1$$, 80, ""},
+          0, 200, ControlPlacement -> 3}, 
+        Row[{
+          Manipulate`Place[1], 
+          Manipulate`Place[2], 
+          Manipulate`Place[3], 
+          Spacer[10], 
+          Dynamic[$CellContext`e1$$]}], 
+        "Option 2", {{$CellContext`p2$$, "short", ""}, {"long", "short"}, 
+         ControlPlacement -> 4}, {{$CellContext`t2$$, "call", ""}, {
+         "call", "put"}, ControlPlacement -> 
+         5}, {{$CellContext`e2$$, 100, ""}, 0, 200, ControlPlacement -> 6}, 
+        Row[{
+          Manipulate`Place[4], 
+          Manipulate`Place[5], 
+          Manipulate`Place[6], 
+          Spacer[10], 
+          Dynamic[$CellContext`e2$$]}]}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{465., {194., 199.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.5237299774835033`*^9, 3.5237300369659433`*^9}, {
+   3.523730073426681*^9, 3.523730095211562*^9}, 3.523730217916978*^9}]
+}, {2}]]
+}, Open  ]]
 }, Open  ]]
 },
 WindowSize->{808, 846},
@@ -615,18 +939,32 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 289, 4, 30, "Input"],
 Cell[CellGroupData[{
-Cell[871, 28, 1190, 31, 107, "Input"],
-Cell[2064, 61, 4336, 79, 223, "Output"]
+Cell[579, 22, 105, 1, 83, "Title"],
+Cell[687, 25, 289, 4, 30, "Input"],
+Cell[CellGroupData[{
+Cell[1001, 33, 100, 1, 72, "Section"],
+Cell[CellGroupData[{
+Cell[1126, 38, 1190, 31, 107, "Input"],
+Cell[2319, 71, 9211, 161, 223, 4001, 74, "CachedBoxData", "BoxData", \
+"Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6437, 145, 3580, 90, 411, "Input"],
-Cell[10020, 237, 4703, 97, 410, "Output"]
+Cell[11567, 237, 3580, 90, 411, "Input"],
+Cell[15150, 329, 4739, 98, 410, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14760, 339, 5110, 128, 601, "Input"],
-Cell[19873, 469, 6221, 129, 450, "Output"]
+Cell[19926, 432, 5110, 128, 601, "Input"],
+Cell[25039, 562, 6273, 130, 450, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31361, 698, 101, 1, 72, "Section"],
+Cell[CellGroupData[{
+Cell[31487, 703, 4637, 113, 582, "Input"],
+Cell[36127, 818, 4935, 102, 410, "Output"]
+}, {2}]]
+}, Open  ]]
 }, Open  ]]
 }
 ]

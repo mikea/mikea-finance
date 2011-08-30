@@ -1,10 +1,6 @@
-(* Mathematica Package *)
-
-(* Created by the Wolfram Workbench Aug 25, 2011 *)
-
 BeginPackage["Finance`"]
-(* Exported symbols added here with SymbolName::usage *) 
-MkOption::usage = 
+
+MkOption::usage =
 "MkOption[Position->long|short, Type->call|put, Strike->strike_price, Quantity->quantity]
 	Creates new option object.";
 
@@ -12,18 +8,19 @@ MkBond::usage =
 "MkBond[Position->long|short, Price->price, Quantity->quantity]
 	Creates new bond object.";
 
-Payoff::usage = 
+Payoff::usage =
 "Payoff[security, assetprice]
 	Calculates security payoff.";
 
-PortfolioPayoff::usage = 
+PortfolioPayoff::usage =
 "PortfolioPayoff[portfolio, assetprice]
 	Calculates portfolio payoff.";
 
 MkSecurity::usage = "MkSecurity"
 
+BinomialPrice::usage = "BinomialPrice[S_, steps_, r_, expiry_, s_, portfolio_]";
+
 Begin["`Private`"];
-(* Implementation of the package *)
 
 Options[MkSecurity] = {Position->"", Quantity->1.0, Asset->""}
 MkSecurity[OptionsPattern[]] :=
@@ -38,14 +35,14 @@ MkSecurity[OptionsPattern[]] :=
 		        "asset" -> asset
 		    }]];
 
-MkOption[opts:OptionsPattern[Options[MkSecurity]~Join~{Type->"call", Strike->""}]] := 
+MkOption[opts:OptionsPattern[Options[MkSecurity]~Join~{Type->"call", Strike->""}]] :=
 	Module[{type=ToString[OptionValue[Type]], strike=OptionValue[Strike]},
 		Which[
 			(* TODO: error checking. *)
 			True, MkSecurity[FilterRules[{opts},Options[MkSecurity]] ~Join~ {Asset->{"class" -> "option", "type"->type, "strike"->strike}}]
 		]];
 
-MkBond[opts:OptionsPattern[Options[MkSecurity]~Join~{Price->""}]] := 
+MkBond[opts:OptionsPattern[Options[MkSecurity]~Join~{Price->""}]] :=
 	Module[{price=OptionValue[Price]},
 		Which[
 			(* TODO: error checking. *)
@@ -61,8 +58,8 @@ OptionPayoff[option_, price_] :=
 
 BondPayoff[bond_, price_] := GetValue[bond, "price"];
 
-Payoff[security_, price_]:= 
-	(* position *) Switch[GetValue[security, "position"],	"long", 1,"short", -1] * 
+Payoff[security_, price_]:=
+	(* position *) Switch[GetValue[security, "position"],	"long", 1,"short", -1] *
 	(* quantity *) GetValue[security, "quantity"] *
 	Switch[GetValue[GetValue[security, "asset"], "class"],
 		"option", OptionPayoff[GetValue[security, "asset"], price],
@@ -70,6 +67,36 @@ Payoff[security_, price_]:=
 		];
 
 PortfolioPayoff[portfolio_, price_]:=Fold[Plus, 0, Payoff[#, price]& /@portfolio ];
+
+(* Binomial Price *)
+
+U[m_, s_, dt_] := 1/2 (E^(-m*dt) + E^((m + s^2) dt)) + 1/2 Sqrt[(E^(-m*dt) + E^((m + s^2) dt))^2 - 4];
+V[m_, s_, dt_] := 1/U[m, s, dt];
+P[m_, s_, dt_] := Module[{u = U[m, s, dt], v = V[m, s, dt]}, (E^(m*dt) - v)/(u - v)];
+
+  
+AssetPrices[S_, steps_, u_, v_] := Table[S * (u^(i - 1)) * (v^(steps - i + 1)), {i, steps + 1}];
+ 
+OptionPrices[S_, steps_, u_, v_, payoffFunction_] := payoffFunction /@ AssetPrices[S, steps, u, v];   
+
+ReducePrices[optionPrices_, p_, r_, dt_] := Table[
+	((1 - p) *optionPrices[[i]] + p*optionPrices[[i + 1]])*E^(-r*dt), 
+  	{i, Length[optionPrices] - 1}]
+
+BinomialPrice[portfolio_, S_, steps_, r_, expiry_, s_] := 
+ Module[{dt, u, v, p, payoffFunction},
+  dt = expiry/steps;
+  u = U[r, s, dt];
+  v = V[r, s, dt];
+  p = P[r, s, dt];
+  payoffFunction = PortfolioPayoff[portfolio, #]&; 
+  First[NestWhile[
+    ReducePrices[#, p, r, dt] &,
+    OptionPrices[S, steps, u, v, payoffFunction],
+    True,
+    steps + 1 ]]
+  ];
+
 
 End[]
 

@@ -99,4 +99,12 @@ Test[
 	TestID->"FinanceTest-BondPayoff"
 ]
 
+Test[
+	BinomialPrice[{MkOption[Position->long, Type->call, Strike->100]}, 100, 4, 0.1, 1/3, 0.2]
+	,
+	6.13447246797594
+	,
+	TestID->"FinanceTest-BinomialPrice"
+]
+
 				
