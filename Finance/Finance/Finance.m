@@ -1,4 +1,4 @@
-BeginPackage["Finance`"]
+BeginPackage["Finance`", { "OOP`"}]
 
 MkOption::usage =
 "MkOption[Position->long|short, Type->call|put, Strike->strike_price, Quantity->quantity]
@@ -22,6 +22,10 @@ BinomialPrice::usage = "BinomialPrice[S_, steps_, r_, expiry_, s_, portfolio_]";
 
 Begin["`Private`"];
 
+(****************** Securities ******************)
+
+CSecurity := MkClass["security"]
+
 Options[MkSecurity] = {Position->"", Quantity->1.0, Asset->""}
 MkSecurity[OptionsPattern[]] :=
 	Module[{position=ToString[OptionValue[Position]], asset=OptionValue[Asset], quantity = OptionValue[Quantity]},
@@ -29,11 +33,13 @@ MkSecurity[OptionsPattern[]] :=
 	        position === "", Message["Position not specified"]; Indeterminate,
 	        position =!= "long" && position =!= "short", Message["Wrong position. Should be long or short"]; Indeterminate,
 	        asset === "", Message["Asset not specified"]; Indeterminate,
-	        True, {
+	        True, NewInstance[CSecurity, {
 		        "position" -> position,
 		        "quantity" -> quantity,
 		        "asset" -> asset
-		    }]];
+		    }]]];
+
+COption := MkClass["option", Parent->CSecurity]
 
 MkOption[opts:OptionsPattern[Options[MkSecurity]~Join~{Type->"call", Strike->""}]] :=
 	Module[{type=ToString[OptionValue[Type]], strike=OptionValue[Strike]},
