@@ -1,0 +1,189 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5347,        179]
+NotebookOptionsPosition[      4598,        148]
+NotebookOutlinePosition[      4935,        163]
+CellTagsIndexPosition[      4892,        160]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.5334007867928743`*^9, 3.5334007882386217`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ItoD", "[", "f_", "]"}], " ", ":=", " ", 
+   RowBox[{
+    RowBox[{"Expand", "[", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Dt", "[", 
+        RowBox[{"f", ",", " ", "t"}], "]"}], " ", "dt"}], " ", "+", " ", 
+      RowBox[{
+       FractionBox["1", "2"], 
+       RowBox[{"Dt", "[", 
+        RowBox[{"f", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", " ", "2"}], "}"}]}], "]"}], " ", 
+       SuperscriptBox["dt", "2"]}]}], "]"}], " ", "/.", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["db", "2"], "\[Rule]", "dt"}], ",", 
+      RowBox[{
+       RowBox[{"db", " ", "dt"}], " ", "\[Rule]", " ", "0"}], ",", " ", 
+      RowBox[{
+       SuperscriptBox["dt", "2"], "\[Rule]", "0"}]}], " ", "}"}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.533400293222103*^9, 3.533400312111614*^9}, {
+  3.53340043249689*^9, 3.533400442952485*^9}, {3.533400473055078*^9, 
+  3.533400492610104*^9}, {3.533401771606995*^9, 3.533401779749167*^9}, {
+  3.533402953553813*^9, 3.533402965667104*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"b", "/:", " ", 
+   RowBox[{"Dt", "[", 
+    RowBox[{"b", ",", " ", "t"}], "]"}], " ", "=", " ", 
+   RowBox[{"db", "/", "dt"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"t", " ", "/:", " ", 
+   RowBox[{"Dt", "[", 
+    RowBox[{"t", ",", " ", "t"}], "]"}], " ", "=", " ", 
+   RowBox[{"dt", "/", "dt"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"db", " ", "/:", " ", 
+   RowBox[{"Dt", "[", 
+    RowBox[{"db", ",", " ", "t"}], "]"}], " ", "=", " ", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dt", " ", "/:", " ", 
+   RowBox[{"Dt", "[", 
+    RowBox[{"dt", ",", " ", "t"}], "]"}], " ", "=", " ", "0"}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.53340057540261*^9, 3.533400584189682*^9}, {
+  3.533400719372141*^9, 3.53340072127979*^9}, {3.5334029290385513`*^9, 
+  3.533402938718865*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ItoD", "[", 
+  RowBox[{"f", "[", "b", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.533400342876741*^9, 3.5334003450045547`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"db", " ", 
+   RowBox[{
+    SuperscriptBox["f", "\[Prime]",
+     MultilineFunction->None], "[", "b", "]"}]}], "+", 
+  RowBox[{
+   FractionBox["1", "2"], " ", "dt", " ", 
+   RowBox[{
+    SuperscriptBox["f", "\[Prime]\[Prime]",
+     MultilineFunction->None], "[", "b", "]"}]}]}]], "Output",
+ CellChangeTimes->{{3.533400345623407*^9, 3.533400352032744*^9}, 
+   3.533400495759973*^9, 3.533400597986805*^9, 3.53340063692216*^9, {
+   3.5334007905508747`*^9, 3.533400806959193*^9}, {3.533401669834076*^9, 
+   3.533401682693975*^9}, 3.5334017820707808`*^9, {3.5334029834234753`*^9, 
+   3.533403011292671*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ItoD", "[", 
+  SuperscriptBox["b", "2"], "]"}]], "Input",
+ CellChangeTimes->{{3.5334029867615232`*^9, 3.5334029928430967`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"2", " ", "b", " ", "db"}], "+", "dt"}]], "Output",
+ CellChangeTimes->{{3.533402993447115*^9, 3.533403011316378*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ItoD", "[", 
+  SuperscriptBox["b", "3"], "]"}]], "Input",
+ CellChangeTimes->{{3.5334029947982893`*^9, 3.533403000011088*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"3", " ", 
+   SuperscriptBox["b", "2"], " ", "db"}], "+", 
+  RowBox[{"3", " ", "b", " ", "dt"}]}]], "Output",
+ CellChangeTimes->{{3.533403001321311*^9, 3.533403011333682*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ItoD", "[", 
+  RowBox[{"b", " ", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.533403002512854*^9, 3.53340300621945*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"b", " ", "dt"}], "+", 
+  RowBox[{"db", " ", "t"}]}]], "Output",
+ CellChangeTimes->{{3.533403006759255*^9, 3.53340301135079*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 355}, {43, Automatic}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 162, 3, 30, "Input"],
+Cell[722, 25, 1072, 29, 78, "Input"],
+Cell[1797, 56, 881, 23, 107, "Input"],
+Cell[CellGroupData[{
+Cell[2703, 83, 153, 3, 30, "Input"],
+Cell[2859, 88, 635, 15, 47, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3531, 108, 151, 3, 34, "Input"],
+Cell[3685, 113, 151, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3873, 121, 149, 3, 34, "Input"],
+Cell[4025, 126, 209, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4271, 136, 145, 3, 30, "Input"],
+Cell[4419, 141, 163, 4, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
