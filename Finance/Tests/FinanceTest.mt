@@ -1,6 +1,15 @@
 (* Mathematica Test File *)
 
 Test[
+	MkBond[Position->long, Price->120]
+	,
+	{"position" -> "long", "quantity" -> 1., "asset" -> {"class" -> "bond", "price" -> 120}}
+	,
+	TestID->"FinanceTest-MkBond"
+]
+
+(*
+Test[
 	MkSecurity[Position->long, Quantity->2, Asset->{}]
 	,
 	{"position" -> "long", "quantity" -> 2, "asset" -> {}}
@@ -107,4 +116,4 @@ Test[
 	TestID->"FinanceTest-BinomialPrice"
 ]
 
-				
+*)				

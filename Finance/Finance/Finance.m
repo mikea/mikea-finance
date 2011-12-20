@@ -24,6 +24,7 @@ Begin["`Private`"];
 
 (****************** Securities ******************)
 
+(*
 CSecurity := MkClass["security"]
 
 Options[MkSecurity] = {Position->"", Quantity->1.0, Asset->""}
@@ -73,9 +74,11 @@ Payoff[security_, price_]:=
 		];
 
 PortfolioPayoff[portfolio_, price_]:=Fold[Plus, 0, Payoff[#, price]& /@portfolio ];
+*)
 
 (* Binomial Price *)
 
+(* 
 U[m_, s_, dt_] := 1/2 (E^(-m*dt) + E^((m + s^2) dt)) + 1/2 Sqrt[(E^(-m*dt) + E^((m + s^2) dt))^2 - 4];
 V[m_, s_, dt_] := 1/U[m, s, dt];
 P[m_, s_, dt_] := Module[{u = U[m, s, dt], v = V[m, s, dt]}, (E^(m*dt) - v)/(u - v)];
@@ -103,6 +106,7 @@ BinomialPrice[portfolio_, S_, steps_, r_, expiry_, s_] :=
     steps + 1 ]]
   ];
 
+*)
 
 End[]
 

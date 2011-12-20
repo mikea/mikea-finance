@@ -1,0 +1,391 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12892,        381]
+NotebookOptionsPosition[     11351,        322]
+NotebookOutlinePosition[     11688,        337]
+CellTagsIndexPosition[     11645,        334]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Remove", "[", "\"\<Global`*\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.533411813467388*^9, 3.53341182534443*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Define simple bonds", "Subsubsection",
+ CellChangeTimes->{{3.533411484427012*^9, 3.533411486522235*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"b1", " ", "=", " ", 
+  RowBox[{"Bond", "[", 
+   RowBox[{"\"\<par_value\>\"", "\[Rule]", "1000"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.533409943267249*^9, 3.533409983301621*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Bond", "[", 
+  RowBox[{"\<\"par_value\"\>", "\[Rule]", "1000"}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.533409975233015*^9, 3.533410397937612*^9, 3.53341172868927*^9, 
+   3.533411794601576*^9, {3.533411827310954*^9, 3.533411851418293*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"b2", " ", "=", " ", 
+  RowBox[{"Bond", "[", 
+   RowBox[{"\"\<par_value\>\"", "\[Rule]", "900"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.533409976394765*^9, 3.533409992277317*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Bond", "[", 
+  RowBox[{"\<\"par_value\"\>", "\[Rule]", "900"}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.533409993074443*^9, 3.5334103979711103`*^9, 3.533411728715563*^9, 
+   3.533411794638692*^9, {3.533411827335319*^9, 3.533411851449662*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Payoff", "[", 
+   RowBox[{
+    RowBox[{"Bond", "[", "args__", "]"}], ",", " ", "prices_"}], "]"}], ":=", 
+  
+  RowBox[{"\"\<par_value\>\"", "/.", "args"}]}]], "Input",
+ CellChangeTimes->{{3.533410074377301*^9, 3.533410110327509*^9}, {
+  3.533410395034568*^9, 3.533410395929099*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Payoff", "[", "b1", "]"}]], "Input",
+ CellChangeTimes->{{3.533410084318722*^9, 3.5334100874462442`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Payoff", "[", 
+  RowBox[{"Bond", "[", 
+   RowBox[{"\<\"par_value\"\>", "\[Rule]", "1000"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{{3.533410087970676*^9, 3.533410112466523*^9}, 
+   3.5334103979809113`*^9, 3.5334117287514677`*^9, 3.533411794662243*^9, {
+   3.533411827371902*^9, 3.5334118514904127`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Payoff", "[", "b2", "]"}]], "Input",
+ CellChangeTimes->{{3.533410114465819*^9, 3.53341011607052*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Payoff", "[", 
+  RowBox[{"Bond", "[", 
+   RowBox[{"\<\"par_value\"\>", "\[Rule]", "900"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.5334101173630123`*^9, 3.533410397986972*^9, 3.533411728777337*^9, 
+   3.5334117946826763`*^9, {3.5334118274023457`*^9, 3.533411851525468*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Define Futures", "Subsubsection",
+ CellChangeTimes->{{3.5334114770353928`*^9, 3.5334114804426727`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f1", "=", 
+  RowBox[{"Future", "[", 
+   RowBox[{
+    RowBox[{"\"\<strike\>\"", "\[Rule]", "95.0"}], ",", " ", 
+    RowBox[{"\"\<underlying\>\"", "\[Rule]", "\"\<MSFT\>\""}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.5334102035084667`*^9, 3.533410214678074*^9}, {
+  3.533410292342772*^9, 3.533410298135865*^9}, {3.5334103383932543`*^9, 
+  3.5334103467938223`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Future", "[", 
+  RowBox[{
+   RowBox[{"\<\"strike\"\>", "\[Rule]", "95.`"}], ",", 
+   RowBox[{"\<\"underlying\"\>", "\[Rule]", "\<\"MSFT\"\>"}]}], 
+  "]"}]], "Output",
+ CellChangeTimes->{
+  3.533410299437801*^9, 3.533410347908497*^9, 3.533410397990273*^9, 
+   3.533411728804467*^9, 3.5334117947012987`*^9, {3.533411827428043*^9, 
+   3.53341185155379*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Payoff", "[", 
+   RowBox[{
+    RowBox[{"Future", "[", "args__", "]"}], ",", " ", 
+    RowBox[{"prices_:", 
+     RowBox[{"{", "}"}]}]}], "]"}], ":=", 
+  RowBox[{"With", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"strike", "=", 
+       RowBox[{"\"\<strike\>\"", "/.", 
+        RowBox[{"{", "args", "}"}]}]}], ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"u", " ", "=", " ", 
+       RowBox[{"\"\<underlying\>\"", " ", "/.", " ", 
+        RowBox[{"{", "args", "}"}]}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"u", " ", "/.", " ", "prices"}], ")"}], " ", "-", " ", 
+     "strike"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.533410305687676*^9, 3.533410315879437*^9}, {
+   3.533410353175782*^9, 3.533410362409*^9}, 3.5334104368263683`*^9, {
+   3.533410581178833*^9, 3.5334105822184753`*^9}, {3.5334106593230963`*^9, 
+   3.533410773571864*^9}, {3.5334108394055233`*^9, 3.533410949724978*^9}, {
+   3.533410989088928*^9, 3.5334109898577127`*^9}, {3.533411055507152*^9, 
+   3.53341108105305*^9}, {3.533411113330658*^9, 3.533411147506631*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Payoff", "[", 
+  RowBox[{"f1", ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"\"\<MSFT\>\"", "\[Rule]", "m"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.533410364284112*^9, 3.533410377241379*^9}, {
+  3.5334109770696907`*^9, 3.533410984636121*^9}, {3.533411134157922*^9, 
+  3.533411157162956*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "95.`"}], "+", "m"}]], "Output",
+ CellChangeTimes->{{3.5334109849209433`*^9, 3.533410990951414*^9}, {
+   3.5334110566792393`*^9, 3.53341108223272*^9}, {3.533411123433073*^9, 
+   3.533411158930191*^9}, 3.5334117288391657`*^9, 3.533411794729239*^9, {
+   3.533411827460788*^9, 3.5334118515879297`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Define portfolios", "Subsubsection",
+ CellChangeTimes->{{3.5334114497867823`*^9, 3.533411452235021*^9}, 
+   3.533411504362217*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"portfolio", " ", "=", " ", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"PortfolioPosition", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<asset\>\"", "->", "b1"}], ",", " ", "\[IndentingNewLine]", 
+      
+      RowBox[{"\"\<position\>\"", "\[Rule]", "\"\<long\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<quantity\>\"", "\[Rule]", "1.0"}]}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"PortfolioPosition", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<asset\>\"", "->", "b2"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<position\>\"", "->", "\"\<short\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<quantity\>\"", "->", "1.0"}]}], " ", "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"PortfolioPosition", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"\"\<asset\>\"", "->", "f1"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<position\>\"", "\[Rule]", "\"\<long\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<quantity\>\"", "\[Rule]", "2.0"}]}], "]"}]}], 
+   "\[IndentingNewLine]", "}"}]}]], "Input",
+ CellChangeTimes->{{3.533411264662109*^9, 3.533411274269122*^9}, {
+  3.5334116473771772`*^9, 3.533411789547271*^9}, {3.533411842076509*^9, 
+  3.533411846971375*^9}, {3.533412048398343*^9, 3.5334120555648623`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"PortfolioPosition", "[", 
+    RowBox[{
+     RowBox[{"\<\"asset\"\>", "\[Rule]", 
+      RowBox[{"Bond", "[", 
+       RowBox[{"\<\"par_value\"\>", "\[Rule]", "1000"}], "]"}]}], ",", 
+     RowBox[{"\<\"position\"\>", "\[Rule]", "\<\"long\"\>"}], ",", 
+     RowBox[{"\<\"quantity\"\>", "\[Rule]", "1.`"}]}], "]"}], ",", 
+   RowBox[{"PortfolioPosition", "[", 
+    RowBox[{
+     RowBox[{"\<\"asset\"\>", "\[Rule]", 
+      RowBox[{"Bond", "[", 
+       RowBox[{"\<\"par_value\"\>", "\[Rule]", "900"}], "]"}]}], ",", 
+     RowBox[{"\<\"position\"\>", "\[Rule]", "\<\"short\"\>"}], ",", 
+     RowBox[{"\<\"quantity\"\>", "\[Rule]", "1.`"}]}], "]"}], ",", 
+   RowBox[{"PortfolioPosition", "[", 
+    RowBox[{
+     RowBox[{"\<\"asset\"\>", "\[Rule]", 
+      RowBox[{"Future", "[", 
+       RowBox[{
+        RowBox[{"\<\"strike\"\>", "\[Rule]", "95.`"}], ",", 
+        RowBox[{"\<\"underlying\"\>", "\[Rule]", "\<\"MSFT\"\>"}]}], "]"}]}], 
+     ",", 
+     RowBox[{"\<\"position\"\>", "\[Rule]", "\<\"long\"\>"}], ",", 
+     RowBox[{"\<\"quantity\"\>", "\[Rule]", "2.`"}]}], "]"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.53341127483568*^9, 3.533411728868003*^9, 3.5334117947850027`*^9, {
+   3.53341182751199*^9, 3.533411851615261*^9}, {3.5334120494143476`*^9, 
+   3.5334120558863993`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Payoff", "[", 
+   RowBox[{
+    RowBox[{"PortfolioPosition", "[", "args__", "]"}], ",", " ", 
+    RowBox[{"prices_:", 
+     RowBox[{"{", "}"}]}]}], "]"}], ":=", 
+  RowBox[{"With", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"asset", "=", 
+       RowBox[{"\"\<asset\>\"", "/.", 
+        RowBox[{"{", "args", "}"}]}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"quantity", "=", 
+       RowBox[{"\"\<quantity\>\"", "/.", 
+        RowBox[{"{", "args", "}"}]}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"position", "=", 
+       RowBox[{"Switch", "[", 
+        RowBox[{
+         RowBox[{"\"\<position\>\"", "/.", 
+          RowBox[{"{", "args", "}"}]}], ",", "\[IndentingNewLine]", 
+         "\"\<long\>\"", ",", " ", "1", ",", "\[IndentingNewLine]", 
+         "\"\<short\>\"", ",", " ", 
+         RowBox[{"-", "1"}], ",", "\[IndentingNewLine]", "_", ",", " ", 
+         RowBox[{"Message", "[", "\"\<error\>\"", "]"}]}], "]"}]}]}], "}"}], 
+    ",", "\[IndentingNewLine]", 
+    RowBox[{"position", "*", "quantity", "*", 
+     RowBox[{"Payoff", "[", 
+      RowBox[{"asset", ",", " ", "prices"}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.533411857084773*^9, 3.53341203758241*^9}}],
+
+Cell["\<\
+Payoff of portfolio is the sum of individual payoffs\
+\>", "Text",
+ CellChangeTimes->{{3.53341146263516*^9, 3.533411470442731*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Payoff", "[", 
+    RowBox[{"list_List", ",", " ", 
+     RowBox[{"prices_:", 
+      RowBox[{"{", "}"}]}]}], "]"}], ":=", 
+   RowBox[{"Total", "[", 
+    RowBox[{"Payoff", " ", "/@", " ", "list"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.533411360666243*^9, 3.533411431777061*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"Payoff", "[", "portfolio", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5334112767565117`*^9, 3.5334112818848677`*^9}, {
+  3.5334119372501183`*^9, 3.533411941201208*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "90.`"}], "+", 
+  RowBox[{"2.`", " ", "\<\"MSFT\"\>"}]}]], "Output",
+ CellChangeTimes->{
+  3.533411282458515*^9, {3.533411376377657*^9, 3.533411401611177*^9}, 
+   3.533411432985814*^9, 3.5334117289057627`*^9, 3.533411794821253*^9, {
+   3.5334118275400553`*^9, 3.533411851649303*^9}, {3.533411911741549*^9, 
+   3.5334119417038*^9}, {3.5334120411525593`*^9, 3.533412057965066*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{959, 1046},
+WindowMargins->{{Automatic, 373}, {5, Automatic}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 157, 3, 30, "Input"],
+Cell[CellGroupData[{
+Cell[739, 27, 110, 1, 28, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[874, 32, 206, 4, 30, "Input"],
+Cell[1083, 38, 266, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1386, 48, 205, 4, 30, "Input"],
+Cell[1594, 54, 268, 5, 30, "Output"]
+}, Open  ]],
+Cell[1877, 62, 317, 8, 30, "Input"],
+Cell[CellGroupData[{
+Cell[2219, 74, 128, 2, 30, "Input"],
+Cell[2350, 78, 332, 6, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2719, 89, 125, 2, 30, "Input"],
+Cell[2847, 93, 306, 6, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3202, 105, 109, 1, 28, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[3336, 110, 392, 9, 30, "Input"],
+Cell[3731, 121, 378, 9, 30, "Output"]
+}, Open  ]],
+Cell[4124, 133, 1162, 26, 88, "Input"],
+Cell[CellGroupData[{
+Cell[5311, 163, 320, 7, 30, "Input"],
+Cell[5634, 172, 338, 6, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6021, 184, 136, 2, 28, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[6182, 190, 1376, 28, 278, "Input"],
+Cell[7561, 220, 1333, 31, 69, "Output"]
+}, Open  ]],
+Cell[8909, 254, 1265, 30, 164, "Input"],
+Cell[10177, 286, 141, 3, 30, "Text"],
+Cell[10321, 291, 333, 9, 30, "Input"],
+Cell[CellGroupData[{
+Cell[10679, 304, 223, 4, 30, "Input"],
+Cell[10905, 310, 418, 8, 30, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
