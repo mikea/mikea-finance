@@ -1,9 +1,34 @@
-(* Mathematica Test File *)
+MkClass["CSquare"];
+MkClass["CCircle", {"radius"}];
 
-CShape = MkClass["shape", Attributes -> {"color" -> "red"}]
+Test[
+	MkCSquare[],
+	CSquare[],
+	TestID->"OOPTest-Constructor-Square"
+]
+
+Test[
+	MkCCircle[],
+	CCircle[],
+	TestID->"OOPTest-Constructor-Circle"
+]
+
+Test[
+	Radius[MkCCircle[radius -> 1.0]],
+	1.0,
+	TestID->"OOPTest-AttrAccessor"
+]
+	
+
+
+(* CShape = MkClass["shape", Attributes -> {"color" -> "red"}]
 CSquare = MkClass["square", Parent -> CShape, Attributes -> {"side"}]
 CCircle = MkClass["circle", Parent -> CShape, Attributes -> {"radius"}]
  
+MkClass 
+*)
+
+ (*
  c1 = NewInstance[CCircle, {"radius" -> 1.0}]
  s1 = NewInstance[CSquare, {"side" -> 2.0}]
  c2 = NewInstance[CCircle, {"radius" -> 3.0, "color" -> "blue"}]
@@ -32,3 +57,4 @@ Test[
 	,
 	TestID->"OOPTest-Attr3"
 ]
+*)

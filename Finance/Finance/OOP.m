@@ -15,6 +15,37 @@ Begin["`Private`"] (* Begin Private Context *)
 (****************** OOP Layer ******************)
 
 On[Assert];
+
+Capitalize[str_] := 
+  ToUpperCase[StringTake[str, 1]] <> StringDrop[str, 1]; 
+
+DefineConstructor[name_] := Module[
+	{
+		constructorName="Mk" <> name
+	},
+	SetDelayed[
+		Evaluate[Symbol[constructorName]][attrs___], 
+		Evaluate[Symbol[name]][attrs]
+		]
+];
+		
+DefineAccessor[className_, name_] := Module[
+	{
+		class = Symbol[className],
+		accessor = Symbol[Capitalize[name]]
+	},
+	SetDelayed[
+		Evaluate[accessor][Evaluate[class][attrs___]], 
+		Evaluate[Symbol[name]] /. attrs
+	]
+];
+
+
+MkClass[name_, attrs_:{}] := (
+	DefineConstructor[name];
+	DefineAccessor[name, #]& /@ attrs;
+	)
+(*
 Options[MkClass] = {Parent -> Null, Attributes -> {}};
 MkClass[name_, OptionsPattern[]] := {
    "name" -> name,
@@ -33,6 +64,7 @@ NewInstance[class_, options_] := Module[
    {attr}, 
    Attr[options, attr]]
   ]
+*)
 
 End[] (* End Private Context *)
 
