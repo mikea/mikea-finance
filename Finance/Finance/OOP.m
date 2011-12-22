@@ -33,11 +33,7 @@ DefineConstructor[className_] := Module[
 	{
 		constructor = Constructor[className]
 	},
-	Print["*** Generating constructor: ", constructor];
-	SetDelayed[
-		Evaluate[constructor][attrs___], 
-		Evaluate[Symbol[HeadName[className]]][attrs]
-		]
+	Evaluate[constructor][attrs___] := Evaluate[Symbol[HeadName[className]]][attrs]
 ];
 		
 DefineAccessor[className_, attrName_] := Module[
@@ -45,10 +41,7 @@ DefineAccessor[className_, attrName_] := Module[
 		headName = Symbol[HeadName[className]],
 		accessor = Symbol[Capitalize[attrName]]
 	},
-	SetDelayed[
-		Evaluate[accessor][Evaluate[headName][attrs___]], 
-		Evaluate[Symbol[attrName]] /. {attrs}
-	]
+	Evaluate[headName] /: Evaluate[accessor][Evaluate[headName][attrs___]] := Evaluate[Symbol[attrName]] /. {attrs}
 ];
 
 MkClass[className_, attrs_:{}] := (
