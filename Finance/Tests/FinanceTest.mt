@@ -23,6 +23,12 @@ Test[
 	TestID->"FinanceTest-MkOption"
 ]
 
+Test[
+	Payoff[MkOption[type->call, strike->120, underlying -> "MSFT"], {"MSFT"->S}],
+	Max[0, -120 + S],
+	TestID->"FinanceTest-MkOption"
+]
+
 (* Test portfolio position. *)
 	
 Test[

@@ -1,12 +1,16 @@
 BeginPackage["Finance`", { "OOP`"}]
 
 MkOption::usage = "";
+option::usage ="";
+
 MkBond::usage = "";
+bond::usage ="";
+
 MkPortfolioPosition::usage = "";
+portfolioPosition::usage ="";
+
 Payoff::usage = "";
 
-bond::usage ="";
-portfolioPosition::usage ="";
 
 PortfolioPayoff::usage =
 "PortfolioPayoff[portfolio, assetprice]
@@ -21,12 +25,21 @@ Begin["`Private`"];
 (****************** Securities ******************)
 
 
-MkClass["Option"];
-
 (* Bonds *)
 
 MkClass["Bond", {"price"}];
 Payoff[aBond_bond, ___] := Price[aBond];
+
+(* Options *)
+MkClass["Option", {"strike", "underlying", "type"}];
+
+Payoff[anOption_option, prices__] := Module[{
+		price = Underlying[anOption] /. prices
+	}, 
+	Switch[ToString[Type[anOption]],
+		"call", Max[0, price - Strike[anOption]],
+		"put", Max[0, Strike[anOption] - price]]
+];
 
 (* Portfolio position *)
 
