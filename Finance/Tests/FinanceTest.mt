@@ -22,6 +22,8 @@ Test[
 	option[type -> call, strike -> 120],
 	TestID->"FinanceTest-MkOption"
 ]
+
+(* Test portfolio position. *)
 	
 Test[
 	MkPortfolioPosition[asset->MkBond[price->120], type->long, quantity->3],
@@ -29,6 +31,11 @@ Test[
 	TestID->"FinanceTest-MkPosition"
 ]
 
+Test[
+	Payoff[MkPortfolioPosition[asset->MkBond[price->120], type->short, quantity->3]],
+	-360,
+	TestID->"FinanceTest-PositionPayoff"
+]
 
 (*
 Test[

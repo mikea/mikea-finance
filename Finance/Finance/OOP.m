@@ -47,7 +47,7 @@ DefineAccessor[className_, attrName_] := Module[
 	},
 	SetDelayed[
 		Evaluate[accessor][Evaluate[headName][attrs___]], 
-		Evaluate[Symbol[attrName]] /. attrs
+		Evaluate[Symbol[attrName]] /. {attrs}
 	]
 ];
 

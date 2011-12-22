@@ -4,7 +4,9 @@ MkOption::usage = "";
 MkBond::usage = "";
 MkPortfolioPosition::usage = "";
 Payoff::usage = "";
+
 bond::usage ="";
+portfolioPosition::usage ="";
 
 PortfolioPayoff::usage =
 "PortfolioPayoff[portfolio, assetprice]
@@ -18,13 +20,24 @@ Begin["`Private`"];
 
 (****************** Securities ******************)
 
-MkClass["PortfolioPosition"];
 
-MkClass["Bond", {"price"}];
 MkClass["Option"];
 
+(* Bonds *)
+
+MkClass["Bond", {"price"}];
 Payoff[aBond_bond, ___] := Price[aBond];
 
+(* Portfolio position *)
+
+MkClass["PortfolioPosition", {"asset", "quantity", "type"}];
+
+Payoff[pos_portfolioPosition, prices___] := 
+	Payoff[Asset[pos]] * Quantity[pos] *
+	Switch[ToString[Type[pos]],
+		"long", 1,
+		"short", -1,
+		_, Indeterminate];
 
 (*
 CSecurity := MkClass["security"]

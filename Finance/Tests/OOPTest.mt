@@ -1,5 +1,6 @@
 MkClass["Square"];
 MkClass["Circle", {"radius"}];
+MkClass["Rectangle", {"a", "b"}];
 
 Test[
 	MkSquare[],
@@ -19,6 +20,23 @@ Test[
 	TestID->"OOPTest-AttrAccessor"
 ]
 	
+Test[
+	MkRectangle[a -> 1.0, b -> 2.0],
+	rectangle[a -> 1., b -> 2.],
+	TestID->"OOPTest-MkRectangle"
+]
+
+Test[
+	A[MkRectangle[a -> 1.0, b -> 2.0]],
+	1.0,
+	TestID->"OOPTest-MkRectangle-accesssor1"
+]
+
+Test[
+	B[MkRectangle[a -> 1.0, b -> 2.0]],
+	2.0,
+	TestID->"OOPTest-MkRectangle-accesssor2"
+]
 
 
 (* CShape = MkClass["shape", Attributes -> {"color" -> "red"}]
