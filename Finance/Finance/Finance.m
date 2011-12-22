@@ -1,16 +1,10 @@
 BeginPackage["Finance`", { "OOP`"}]
 
-MkOption::usage =
-"MkOption[Position->long|short, Type->call|put, Strike->strike_price, Quantity->quantity]
-	Creates new option object.";
-
-MkBond::usage =
-"MkBond[Position->long|short, Price->price, Quantity->quantity]
-	Creates new bond object.";
-
-Payoff::usage =
-"Payoff[security, assetprice]
-	Calculates security payoff.";
+MkOption::usage = "";
+MkBond::usage = "";
+MkPortfolioPosition::usage = "";
+Payoff::usage = "";
+bond::usage ="";
 
 PortfolioPayoff::usage =
 "PortfolioPayoff[portfolio, assetprice]
@@ -23,6 +17,14 @@ BinomialPrice::usage = "BinomialPrice[S_, steps_, r_, expiry_, s_, portfolio_]";
 Begin["`Private`"];
 
 (****************** Securities ******************)
+
+MkClass["PortfolioPosition"];
+
+MkClass["Bond", {"price"}];
+MkClass["Option"];
+
+Payoff[aBond_bond, ___] := Price[aBond];
+
 
 (*
 CSecurity := MkClass["security"]

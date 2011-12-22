@@ -1,20 +1,20 @@
-MkClass["CSquare"];
-MkClass["CCircle", {"radius"}];
+MkClass["Square"];
+MkClass["Circle", {"radius"}];
 
 Test[
-	MkCSquare[],
-	CSquare[],
+	MkSquare[],
+	square[],
 	TestID->"OOPTest-Constructor-Square"
 ]
 
 Test[
-	MkCCircle[],
-	CCircle[],
+	MkCircle[],
+	circle[],
 	TestID->"OOPTest-Constructor-Circle"
 ]
 
 Test[
-	Radius[MkCCircle[radius -> 1.0]],
+	Radius[MkCircle[radius -> 1.0]],
 	1.0,
 	TestID->"OOPTest-AttrAccessor"
 ]

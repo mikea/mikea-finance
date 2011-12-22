@@ -1,12 +1,34 @@
 (* Mathematica Test File *)
 
+(* Test[Definition[Payoff],	{},	TestID->"FinanceTest-Foo" ] *)
+
+(* Test bonds *)
 Test[
-	MkBond[Position->long, Price->120]
-	,
-	{"position" -> "long", "quantity" -> 1., "asset" -> {"class" -> "bond", "price" -> 120}}
-	,
+	MkBond[price->120],
+	bond[price->120],
 	TestID->"FinanceTest-MkBond"
 ]
+
+Test[
+	Payoff[MkBond[price->120]],
+	120,
+	TestID->"FinanceTest-BondPayoff"
+]
+
+
+(* Test options *)
+Test[
+	MkOption[type->call, strike->120],
+	option[type -> call, strike -> 120],
+	TestID->"FinanceTest-MkOption"
+]
+	
+Test[
+	MkPortfolioPosition[asset->MkBond[price->120], type->long, quantity->3],
+	portfolioPosition[asset -> bond[price -> 120], type -> long, quantity -> 3],
+	TestID->"FinanceTest-MkPosition"
+]
+
 
 (*
 Test[

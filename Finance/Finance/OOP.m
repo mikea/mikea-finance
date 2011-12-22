@@ -19,32 +19,43 @@ On[Assert];
 Capitalize[str_] := 
   ToUpperCase[StringTake[str, 1]] <> StringDrop[str, 1]; 
 
-DefineConstructor[name_] := Module[
+Decapitalize[str_] := 
+  ToLowerCase[StringTake[str, 1]] <> StringDrop[str, 1]; 
+
+
+ConstructorName[className_] := "Mk" <> Capitalize[className];
+Constructor[className_] := Symbol[ConstructorName[className]];
+
+HeadName[className_] := Decapitalize[className];
+
+
+DefineConstructor[className_] := Module[
 	{
-		constructorName="Mk" <> name
+		constructor = Constructor[className]
 	},
+	Print["*** Generating constructor: ", constructor];
 	SetDelayed[
-		Evaluate[Symbol[constructorName]][attrs___], 
-		Evaluate[Symbol[name]][attrs]
+		Evaluate[constructor][attrs___], 
+		Evaluate[Symbol[HeadName[className]]][attrs]
 		]
 ];
 		
-DefineAccessor[className_, name_] := Module[
+DefineAccessor[className_, attrName_] := Module[
 	{
-		class = Symbol[className],
-		accessor = Symbol[Capitalize[name]]
+		headName = Symbol[HeadName[className]],
+		accessor = Symbol[Capitalize[attrName]]
 	},
 	SetDelayed[
-		Evaluate[accessor][Evaluate[class][attrs___]], 
-		Evaluate[Symbol[name]] /. attrs
+		Evaluate[accessor][Evaluate[headName][attrs___]], 
+		Evaluate[Symbol[attrName]] /. attrs
 	]
 ];
 
-
-MkClass[name_, attrs_:{}] := (
-	DefineConstructor[name];
-	DefineAccessor[name, #]& /@ attrs;
-	)
+MkClass[className_, attrs_:{}] := (
+	DefineConstructor[className];
+	DefineAccessor[className, #]& /@ attrs;
+	);
+	
 (*
 Options[MkClass] = {Parent -> Null, Attributes -> {}};
 MkClass[name_, OptionsPattern[]] := {
